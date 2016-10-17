@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('themes/default/style.min.css')  }}" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css')  }}" />
+        <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap-theme.min.css')  }}" />
+        <link rel="stylesheet" href="{{ asset('css/main.css')  }}" />
+    {% endblock %}
+
+    <script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ asset('js/jstree.min.js') }}"></script>
+    <script src="{{ asset('js/jsTreeActions.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+</head>
+<body>
+<div class="header"><h1>Todo list (Георгий Сергушин)</h1></div>
+<div class="radio">
+    <label>
+        <input type="radio" name="filter" value="all" checked>
+        Отобразить все задачи
+    </label>
+    <label>
+        <input type="radio" name="filter" value="active">
+        Отобразить активные задачи
+    </label>
+    <label>
+        <input type="radio" name="filter" value="complete">
+        Отобразить завершенные задачи
+    </label>
+    <input class="btn btn-default btn-xs" type="button" id="add-note" value="Добавить главную задачу">
+</div>
+<div id="jstree"></div>
+<div id="workplace"></div>
+</body>
+</html>

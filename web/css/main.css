@@ -1,0 +1,31 @@
+#jstree {
+}
+
+#workplace {
+}
+
+body, html {
+    margin: 30px auto;
+    width: 900px;
+}
+
+textarea {
+    resize: none;
+    width: 80%;
+}
+
+.one-note .title-input {
+    width: 80%;
+}
+
+li {
+    color: #000;
+}
+
+li.text-disable {
+font-style: italic;
+color: #bfbfbf;
+}
+
+input[type="text"] { border: none; }
+input[type="text"]:focus { outline: none; }

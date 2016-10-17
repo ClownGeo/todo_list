@@ -1,0 +1,7 @@
+<ul>
+    {% for note in notes %}
+        <li id='{{ note.id }}' data-jstree='{\"icon\":\"/img/sticker.png\"}' class="{% if not (note.isActive) %}text-disable{% endif  %} {% if (note.isParent) %}jstree-closed{% endif  %}">
+           {{ note.title }}
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,34 @@
+<form method="post" action="/edit" class="one-note">
+    <p>
+        <h3><input class="title-input" name="title" type="text" value="{{ title }}" placeholder="Введите название задачи"></h3>
+    </p>
+    <p>
+        <h3>Описание:</h3>
+        <textarea name="text" rows="4">{{ text }}</textarea>
+    </p>
+    <p>
+        <input type="hidden" name="id"  value="{{ id }}">
+        <input type="hidden" name="parent"  value="{{ parent }}">
+    </p>
+    <p>
+        <input class="btn btn-success" name="save" type="submit" value="Сохранить" >
+        {% if (notnew) %}
+        <input class="btn btn-danger" name="remove" type="submit" value="Удалить" >
+        <input class="btn btn-info" id="plus" name="add" type="button" value="Добавить дочернюю задачу">
+        <input class="btn btn-info" name="active" type="submit" value="{% if not (active) %}Открыть задачу{% else %}Отметить задачу выполненной{% endif %}">
+        {% endif  %}
+    </p>
+    <script>
+        $(function () {
+            $('#plus').click( function () {
+                $.ajax({
+                        url: '/getNewNote/{{ id }}',
+                        success: function(data) {
+                            $('#workplace').html(data);
+                        }
+                    }
+                );
+            });
+        });
+    </script>
+</form>
